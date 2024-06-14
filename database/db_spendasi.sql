@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 18, 2020 at 03:16 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.6
+-- Host: 127.0.0.1:3307
+-- Generation Time: Jun 14, 2024 at 02:36 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ppdb_online`
+-- Database: `db_spendasi`
 --
 
 -- --------------------------------------------------------
@@ -35,14 +34,14 @@ CREATE TABLE `administrasi` (
   `status` enum('Lunas','Belum Lunas') NOT NULL,
   `tgl_buat` datetime NOT NULL,
   `tgl_ubah` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `administrasi`
 --
 
 INSERT INTO `administrasi` (`id_administrasi`, `id_identitas_siswa`, `harga`, `status`, `tgl_buat`, `tgl_ubah`) VALUES
-(5, 1, 1250000, 'Lunas', '2020-09-17 09:48:12', '2020-09-17 08:22:50');
+(6, 5, 500000, 'Lunas', '2024-06-14 02:34:53', '2024-06-14 00:35:15');
 
 --
 -- Triggers `administrasi`
@@ -101,16 +100,16 @@ CREATE TABLE `identitas_siswa` (
   `status_administrasi` tinyint(1) NOT NULL,
   `tgl_buat` datetime NOT NULL,
   `tgl_ubah` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `identitas_siswa`
 --
 
 INSERT INTO `identitas_siswa` (`Id_Identitas_Siswa`, `NISN`, `No_KK`, `NIK`, `Nama_Panggilan`, `Nama_Peserta_Didik`, `Tempat_Lahir`, `Tanggal_Lahir`, `Jenis_Kelamin`, `Agama`, `Gol_Darah`, `Tinggi_Badan`, `Berat_Badan`, `Suku`, `Bahasa`, `Kewarganegaraan`, `Status_Anak`, `Anak_Ke`, `Jml_Saudara`, `Jenis_Tinggal`, `Alamat_Tinggal`, `Provinsi_Tinggal`, `Kab_Kota_Tinggal`, `Kec_Tinggal`, `Kelurahan_Tinggal`, `Kode_POS`, `Jarak_Ke_Sekolah`, `Riwayat_Penyakit`, `status_ortu`, `status_administrasi`, `tgl_buat`, `tgl_ubah`) VALUES
-(1, '0001999901', '0001999901666444', '0001999901666444', 'Agung', 'Agung Dermawan', 'Jember', '2014-11-14', 'Laki-Laki', 'Islam', 'A', '108', '28', 'Jawa', 'Indonesia', 'Indonesia', 'Jawa', 2, 3, 'Kontrak', 'Jl. Dr. Soebandi Gg. Kenitu', 'Jawa Timur', 'Jember', 'Wuluhan', 'Wuluhan', '68119', '1', 'Tidak Ada', 1, 1, '0000-00-00 00:00:00', '2020-09-17 07:48:12'),
-(3, '0131293812', '9071230127301273', '1237102370127309', 'Jonatan', 'Jonatan Zilguin', 'Jember', '2013-08-26', 'Laki-Laki', 'Islam', 'B', '120', '30', 'Jawa', 'Indonesia', 'Indonesia', 'Jawa', 2, 5, 'Kontrak', 'Jember Lor 2', 'Jawa Timur', 'Jember', 'Wuluhan', 'Wuluhan', '68118', '2', 'Tidak Ada', 1, 0, '0000-00-00 00:00:00', '2020-09-18 08:16:05'),
-(4, '0120981371', '9012730126301273', '9263017230127390', 'Iskandar', 'Iskandar Muda', 'Jember', '2011-09-08', 'Laki-Laki', 'Islam', 'B', '120', '30', 'Jawa', 'Indonesia', 'Indonesia', 'Jawa', 2, 3, 'Kontrak', 'Jember', 'Jawa Timur', 'Jember', 'Wuluhan', 'Wuluhan', '68115', '1', 'Tidak Ada', 0, 0, '2020-09-18 10:53:33', '2020-09-18 08:53:33');
+(5, '2014760267', '1234750923175902', '1234625375474253', 'Anies', 'Anies Baswedan', 'Sidoarjo', '2024-06-12', 'Laki-Laki', 'Islam', 'A', '177', '77', 'Betawi', 'Indonesia', 'Indonesia', 'Betawi', 1, 3, 'Tetap', 'Sumorame', 'Jawa Timur', 'Sidoarjo', 'Candi', 'Sumorame', '61271', '10000', 'Tidak Ada', 1, 1, '2024-06-14 02:15:33', '2024-06-14 00:34:53'),
+(6, '2290580127', '1437651475437356', '2745672864283623', 'Prabowo', 'Prabowo Gibran', 'Sidoarjo', '2024-05-26', 'Laki-Laki', 'Islam', 'O', '166', '80', 'Jawa', 'Indonesia', 'Indonesia', 'Jawa', 1, 3, 'Tetap', 'Candi', 'Jawa Timur', 'Sidoarjo', 'Candi', 'Sumorame', '61271', '500', 'Tidak Ada', 1, 0, '2024-06-14 02:21:15', '2024-06-14 00:22:26'),
+(7, '2207109471', '4327645237243252', '3426745274257325', 'Wayan', 'I Wayan Indra Sakti Sanjaya', 'Sidoarjo', '2024-06-14', 'Laki-Laki', 'Islam', 'A', '157', '55', 'Bali', 'Indonesia', 'Indonesia', 'Bali', 1, 3, 'Tetap', 'Candi', 'Jawa Timur', 'Sidoarjo', 'Candi', 'Sumorame', '534634', '3256', '-', 0, 0, '2024-06-14 02:27:07', '2024-06-14 00:27:07');
 
 -- --------------------------------------------------------
 
@@ -147,15 +146,15 @@ CREATE TABLE `orang_tua_wali` (
   `Alamat_Wali` varchar(165) NOT NULL,
   `tgl_buat` datetime NOT NULL,
   `tgl_ubah` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `orang_tua_wali`
 --
 
 INSERT INTO `orang_tua_wali` (`Id_Orang_Tua_Wali`, `Id_Identitas_Siswa`, `Nama_Ayah`, `Status_Ayah`, `Tgl_Lahir_Ayah`, `Telepon_Ayah`, `Pendidikan_Terakhir_Ayah`, `Pekerjaan_Ayah`, `Penghasilan_Ayah`, `Alamat_Ayah`, `Nama_Ibu`, `Status_Ibu`, `Tgl_Lahir_Ibu`, `Telepon_Ibu`, `Pendidikan_Terakhir_Ibu`, `Pekerjaan_Ibu`, `Penghasilan_Ibu`, `Alamat_Ibu`, `Nama_Wali`, `Status_Wali`, `Tgl_Lahir_Wali`, `Telepon_Wali`, `Pendidikan_Terakhir_Wali`, `Pekerjaan_Wali`, `Penghasilan_Wali`, `Alamat_Wali`, `tgl_buat`, `tgl_ubah`) VALUES
-(1, 1, 'Dedi Sunarto', 'Kandung', '1988-08-30', '089623492347', 'SMA', 'Teknisi', '1991-05-05', 'JL. Tempanyung', 'Dewi Setia', 'Kandung', '1991-10-13', '082323231231', 'SMA', 'Ibu Rumah Tangga', '1992-12-06', 'Jl. Semeru ', 'Ferdi Wicaksono', 'Tiri', '1989-03-20', '085212312368', 'Kuliah', 'Wasit', '1989-10-08', 'Jl. Butang', '2020-09-17 04:54:57', '2020-09-17 02:54:57'),
-(3, 3, 'Hendro Siswanto', 'Kandung', '1992-06-29', '087197123877', 'SMA', 'Supir', '2000000', 'Jl Dr. Hari', 'Gigi Susanti', 'Kandung', '1993-04-20', '08786868690', 'SMA', 'Ibu Rumah Tangga', '0', 'Jl. Sirsat', 'Bejo Santoso', 'Tiri', '2008-04-19', '0890123876', 'Kuliah', 'HRD', '8000000', 'Jl. semeru', '0000-00-00 00:00:00', '2020-09-18 08:31:12');
+(4, 5, 'Anto', 'Kandung', '2024-05-31', '087182936745', 'S1', 'Swasta', '5000000', 'Gorontalo', 'Siti', 'Kandung', '2024-05-28', '08986159812', 'SMA', '-', '0', '-', '-', '-', '2024-06-07', '0', '-', '-', '0', '-', '2024-06-14 02:19:01', '2024-06-14 00:19:01'),
+(5, 6, '-', '-', '2024-06-14', '0', '-', '-', '0', '-', '-', '-', '2024-06-14', '0', '-', '-', '0', '-', 'Asep', 'Paman', '2024-06-01', '08619845613', 'SMA', '-', '0', 'Magersari', '2024-06-14 02:22:26', '2024-06-14 00:22:26');
 
 --
 -- Triggers `orang_tua_wali`
@@ -190,15 +189,15 @@ CREATE TABLE `user` (
   `status` enum('aktif','tidak aktif') NOT NULL,
   `tgl_buat` datetime NOT NULL,
   `tgl_ubah` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `nama`, `username`, `password`, `hak`, `status`, `tgl_buat`, `tgl_ubah`) VALUES
-(1, 'Andi Santosoku', 'andisantoso', 'andisantoso', 'pegawai', 'aktif', '2020-09-16 19:09:20', '2020-09-16 17:20:12'),
-(6, 'Tiara Ekylia Eriza Putri', 'tiaraekylia', 'tiaraekylia', 'admin', 'aktif', '2020-09-16 18:32:57', '2020-09-17 14:14:28');
+(1, 'I Wayan Indra Sakti Sanjaya', 'wayan', 'wayan123', 'admin', 'aktif', '2024-06-14 02:12:20', '2024-06-14 00:12:45'),
+(2, 'Sena Daniswara', 'sena', 'sena123', 'pegawai', 'aktif', '2024-06-14 02:12:54', '2024-06-14 00:13:12');
 
 --
 -- Indexes for dumped tables
@@ -241,19 +240,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `administrasi`
 --
 ALTER TABLE `administrasi`
-  MODIFY `id_administrasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_administrasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `identitas_siswa`
 --
 ALTER TABLE `identitas_siswa`
-  MODIFY `Id_Identitas_Siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id_Identitas_Siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `orang_tua_wali`
 --
 ALTER TABLE `orang_tua_wali`
-  MODIFY `Id_Orang_Tua_Wali` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id_Orang_Tua_Wali` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
