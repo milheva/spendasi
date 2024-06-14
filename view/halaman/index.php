@@ -54,7 +54,7 @@
               </div>
               <div class="d-flex site-info align-items-center">
                 <span class="block-icon mr-3"><span class="icon-clock-o"></span></span>
-                <span>Senin - Sabtu 07.00 WIB - 15.00 WIB <br> Sabtu Libur</span>
+                <span>Senin - Jumat 07.00 WIB - 15.00 WIB <br> Sabtu Libur</span>
               </div>
               
             </div>
